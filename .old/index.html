@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee Route - Cafeterías de Especialidad en Coquimbo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-dark': '#3C2415',
+                        'coffee-medium': '#8B4513',
+                        'coffee-light': '#D2B48C',
+                        'beige': '#F5F5DC',
+                        'olive': '#808000',
+                        'olive-light': '#9CAF88'
+                    },
+                    fontFamily: {
+                        'coffee': ['Georgia', 'serif'],
+                        'modern': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .coffee-gradient {
+            background: linear-gradient(135deg, #8B4513 0%, #D2B48C 100%);
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5F5DC' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body class="font-modern bg-beige text-coffee-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-coffee-dark">
+                        ☕ The Coffee Route
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#inicio" class="text-coffee-dark hover:text-coffee-medium px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                        <a href="#mapa" class="text-coffee-dark hover:text-coffee-medium px-3 py-2 rounded-md text-sm font-medium transition-colors">Mapa</a>
+                        <a href="#cafeterias" class="text-coffee-dark hover:text-coffee-medium px-3 py-2 rounded-md text-sm font-medium transition-colors">Cafeterías</a>
+                        <a href="#pasaporte" class="text-coffee-dark hover:text-coffee-medium px-3 py-2 rounded-md text-sm font-medium transition-colors">Pasaporte</a>
+                        <a href="#eventos" class="text-coffee-dark hover:text-coffee-medium px-3 py-2 rounded-md text-sm font-medium transition-colors">Eventos</a>
+                        <a href="#resenas" class="text-coffee-dark hover:text-coffee-medium px-3 py-2 rounded-md text-sm font-medium transition-colors">Reseñas</a>
+                        <a href="#nosotros" class="text-coffee-dark hover:text-coffee-medium px-3 py-2 rounded-md text-sm font-medium transition-colors">Nosotros</a>
+                        <a href="#contacto" class="text-coffee-dark hover:text-coffee-medium px-3 py-2 rounded-md text-sm font-medium transition-colors">Contacto</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-coffee-dark hover:text-coffee-medium">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+                <a href="#inicio" class="text-coffee-dark hover:text-coffee-medium block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#mapa" class="text-coffee-dark hover:text-coffee-medium block px-3 py-2 rounded-md text-base font-medium">Mapa</a>
+                <a href="#cafeterias" class="text-coffee-dark hover:text-coffee-medium block px-3 py-2 rounded-md text-base font-medium">Cafeterías</a>
+                <a href="#pasaporte" class="text-coffee-dark hover:text-coffee-medium block px-3 py-2 rounded-md text-base font-medium">Pasaporte</a>
+                <a href="#eventos" class="text-coffee-dark hover:text-coffee-medium block px-3 py-2 rounded-md text-base font-medium">Eventos</a>
+                <a href="#resenas" class="text-coffee-dark hover:text-coffee-medium block px-3 py-2 rounded-md text-base font-medium">Reseñas</a>
+                <a href="#nosotros" class="text-coffee-dark hover:text-coffee-medium block px-3 py-2 rounded-md text-base font-medium">Nosotros</a>
+                <a href="#contacto" class="text-coffee-dark hover:text-coffee-medium block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="coffee-gradient hero-pattern min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-[#8B6D5C] mb-6">
+                    The Coffee Route
+                </h1>
+                <p class="text-xl md:text-2xl text-beige mb-8 max-w-3xl mx-auto">
+                    Descubre las mejores cafeterías de especialidad en la Región de Coquimbo. 
+                    Una ruta única para los amantes del café artesanal y la cultura local.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('mapa')" class="bg-white text-coffee-dark px-8 py-3 rounded-full font-semibold hover:bg-beige transition-colors hover-lift">
+                        🗺️ Explorar Mapa
+                    </button>
+                    <button onclick="scrollToSection('pasaporte')" class="bg-white text-coffee-dark px-8 py-3 rounded-full font-semibold hover:bg-beige transition-colors hover-lift">
+                        📖 Obtener Pasaporte
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="bg-white py-8 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Buscar cafeterías, ubicación, tipo de café..." 
+                           class="w-full px-4 py-3 pl-12 pr-4 text-coffee-dark bg-beige rounded-full focus:outline-none focus:ring-2 focus:ring-coffee-medium">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center">
+                        <svg class="h-5 w-5 text-coffee-medium" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                </div>
+                <div id="search-suggestions" class="hidden absolute z-10 w-full bg-white mt-1 rounded-lg shadow-lg border"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de Cafeterías -->
+    <section id="mapa" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-coffee-dark mb-4">🗺️ Mapa de Cafeterías</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Explora todas las cafeterías de especialidad en la región. Usa los filtros para encontrar exactamente lo que buscas.
+                </p>
+            </div>
+            
+            <!-- Filtros -->
+            <div class="mb-8 flex flex-wrap gap-4 justify-center">
+                <select class="px-4 py-2 bg-beige text-coffee-dark rounded-full focus:outline-none focus:ring-2 focus:ring-coffee-medium">
+                    <option>Todas las comunas</option>
+                    <option>La Serena</option>
+                    <option>Coquimbo</option>
+                    <option>Ovalle</option>
+                    <option>Illapel</option>
+                </select>
+                <select class="px-4 py-2 bg-beige text-coffee-dark rounded-full focus:outline-none focus:ring-2 focus:ring-coffee-medium">
+                    <option>Tipo de café</option>
+                    <option>Espresso</option>
+                    <option>Filtrado</option>
+                    <option>Cold Brew</option>
+                    <option>Specialty</option>
+                </select>
+                <button class="px-4 py-2 bg-olive text-white rounded-full hover:bg-olive-light transition-colors">
+                    📶 Con WiFi
+                </button>
+                <button class="px-4 py-2 bg-olive text-white rounded-full hover:bg-olive-light transition-colors">
+                    🐕 Pet Friendly
+                </button>
+            </div>
+
+            <!-- Mapa Interactivo -->
+            <div class="bg-coffee-light rounded-lg p-8 text-center">
+                <div class="bg-white rounded-lg p-12 min-h-96 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🗺️</div>
+                        <h3 class="text-2xl font-semibold text-coffee-dark mb-2">Mapa Interactivo</h3>
+                        <p class="text-gray-600 mb-4">Aquí se mostraría el mapa con las ubicaciones de las cafeterías</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                            <div class="bg-coffee-medium text-white p-3 rounded-lg cursor-pointer hover:bg-coffee-dark transition-colors">
+                                <div class="text-2xl mb-1">☕</div>
+                                <div class="text-sm">Café Central</div>
+                                <div class="text-xs">La Serena</div>
+                            </div>
+                            <div class="bg-coffee-medium text-white p-3 rounded-lg cursor-pointer hover:bg-coffee-dark transition-colors">
+                                <div class="text-2xl mb-1">☕</div>
+                                <div class="text-sm">Tostado Local</div>
+                                <div class="text-xs">Coquimbo</div>
+                            </div>
+                            <div class="bg-coffee-medium text-white p-3 rounded-lg cursor-pointer hover:bg-coffee-dark transition-colors">
+                                <div class="text-2xl mb-1">☕</div>
+                                <div class="text-sm">Granos del Norte</div>
+                                <div class="text-xs">Ovalle</div>
+                            </div>
+                            <div class="bg-coffee-medium text-white p-3 rounded-lg cursor-pointer hover:bg-coffee-dark transition-colors">
+                                <div class="text-2xl mb-1">☕</div>
+                                <div class="text-sm">Aroma Sereno</div>
+                                <div class="text-xs">La Serena</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fichas de Cafeterías -->
+    <section id="cafeterias" class="py-20 bg-beige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-coffee-dark mb-4">☕ Nuestras Cafeterías</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Cada cafetería tiene su propia historia y especialidad. Descubre lo que las hace únicas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cafetería 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+                    <div class="h-48 bg-coffee-light flex items-center justify-center">
+                        <div class="text-6xl">☕</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Café Central</h3>
+                        <p class="text-gray-600 mb-3">Especialistas en café de origen único con más de 10 años de experiencia en La Serena.</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+                            <span class="ml-2 text-sm text-gray-600">(4.8/5)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-3">
+                            <p>📍 Av. Francisco de Aguirre 123, La Serena</p>
+                            <p>🕒 Lun-Vie: 7:00-20:00 | Sáb-Dom: 8:00-22:00</p>
+                            <p>📶 WiFi | 🐕 Pet Friendly</p>
+                        </div>
+                        <div class="flex gap-2 mb-4">
+                            <span class="bg-coffee-light text-coffee-dark px-2 py-1 rounded-full text-xs">Espresso</span>
+                            <span class="bg-coffee-light text-coffee-dark px-2 py-1 rounded-full text-xs">Filtrado</span>
+                            <span class="bg-coffee-light text-coffee-dark px-2 py-1 rounded-full text-xs">Pasteles</span>
+                        </div>
+                        <button onclick="openCafeModal('central')" class="w-full bg-coffee-medium text-white py-2 rounded-lg hover:bg-coffee-dark transition-colors">
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cafetería 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+                    <div class="h-48 bg-olive-light flex items-center justify-center">
+                        <div class="text-6xl">🌱</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Tostado Local</h3>
+                        <p class="text-gray-600 mb-3">Tostadores artesanales con enfoque en sostenibilidad y comercio justo.</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+                            <span class="ml-2 text-sm text-gray-600">(4.9/5)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-3">
+                            <p>📍 Calle Aldunate 456, Coquimbo</p>
+                            <p>🕒 Mar-Dom: 8:00-18:00 | Lunes cerrado</p>
+                            <p>📶 WiFi | 🌱 Orgánico</p>
+                        </div>
+                        <div class="flex gap-2 mb-4">
+                            <span class="bg-olive-light text-white px-2 py-1 rounded-full text-xs">Cold Brew</span>
+                            <span class="bg-olive-light text-white px-2 py-1 rounded-full text-xs">Orgánico</span>
+                            <span class="bg-olive-light text-white px-2 py-1 rounded-full text-xs">Vegan</span>
+                        </div>
+                        <button onclick="openCafeModal('tostado')" class="w-full bg-coffee-medium text-white py-2 rounded-lg hover:bg-coffee-dark transition-colors">
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cafetería 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+                    <div class="h-48 bg-coffee-medium flex items-center justify-center">
+                        <div class="text-6xl text-white">🏔️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Granos del Norte</h3>
+                        <p class="text-gray-600 mb-3">Café de altura con vista panorámica de la cordillera en Ovalle.</p>
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+                            <span class="ml-2 text-sm text-gray-600">(4.7/5)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-3">
+                            <p>📍 Plaza de Armas 789, Ovalle</p>
+                            <p>🕒 Todos los días: 7:30-21:00</p>
+                            <p>📶 WiFi | 🎵 Música en vivo</p>
+                        </div>
+                        <div class="flex gap-2 mb-4">
+                            <span class="bg-coffee-medium text-white px-2 py-1 rounded-full text-xs">Specialty</span>
+                            <span class="bg-coffee-medium text-white px-2 py-1 rounded-full text-xs">Altura</span>
+                            <span class="bg-coffee-medium text-white px-2 py-1 rounded-full text-xs">Vista</span>
+                        </div>
+                        <button onclick="openCafeModal('granos')" class="w-full bg-coffee-medium text-white py-2 rounded-lg hover:bg-coffee-dark transition-colors">
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pasaporte Cafetero -->
+    <section id="pasaporte" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-coffee-dark mb-6">📖 Pasaporte Cafetero</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Tu compañero perfecto para explorar la ruta del café. Colecciona sellos, gana recompensas y descubre nuevos sabores en cada visita.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">🎯</div>
+                            <div>
+                                <h3 class="font-semibold text-coffee-dark">Misiones y Recompensas</h3>
+                                <p class="text-gray-600">Completa desafíos y gana descuentos exclusivos</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">📍</div>
+                            <div>
+                                <h3 class="font-semibold text-coffee-dark">Registro de Visitas</h3>
+                                <p class="text-gray-600">Documenta tu experiencia en cada cafetería</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">🏆</div>
+                            <div>
+                                <h3 class="font-semibold text-coffee-dark">Logros Especiales</h3>
+                                <p class="text-gray-600">Desbloquea insignias y participa en sorteos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="buyPassport()" class="bg-coffee-medium text-white px-8 py-3 rounded-full font-semibold hover:bg-coffee-dark transition-colors hover-lift">
+                            💳 Comprar Pasaporte - $5.990
+                        </button>
+                        <button onclick="downloadSample()" class="border-2 border-coffee-medium text-coffee-medium px-8 py-3 rounded-full font-semibold hover:bg-coffee-medium hover:text-white transition-colors">
+                            📥 Descargar Muestra
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <div class="bg-coffee-light p-8 rounded-lg shadow-lg hover-lift">
+                        <!-- Pasaporte Visual -->
+                        <div class="bg-white p-6 rounded-lg shadow-md max-w-sm mx-auto" style="aspect-ratio: 3/4;">
+                            <div class="text-center mb-4">
+                                <div class="text-4xl mb-2">☕</div>
+                                <h3 class="text-xl font-bold text-coffee-dark">PASAPORTE</h3>
+                                <h4 class="text-lg font-semibold text-coffee-medium">CAFETERO</h4>
+                                <div class="text-sm text-gray-600 mt-2">Región de Coquimbo</div>
+                            </div>
+                            
+                            <div class="border-2 border-dashed border-coffee-light p-3 mb-4">
+                                <div class="text-xs text-gray-500 mb-1">Nombre del explorador:</div>
+                                <div class="border-b border-coffee-light pb-1"></div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div class="bg-beige p-2 rounded text-center">
+                                    <div class="font-semibold">Visitas</div>
+                                    <div class="text-coffee-medium">0/20</div>
+                                </div>
+                                <div class="bg-beige p-2 rounded text-center">
+                                    <div class="font-semibold">Logros</div>
+                                    <div class="text-coffee-medium">0/10</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 text-center">
+                                <div class="text-xs text-gray-500">www.thecoffeeroute.cl</div>
+                                <div class="text-lg">📱</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda de Eventos -->
+    <section id="eventos" class="py-20 bg-beige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-coffee-dark mb-4">📅 Agenda de Eventos</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Participa en catas, talleres y eventos especiales. Conecta con otros amantes del café.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Evento 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-coffee-medium text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="text-sm font-bold">15<br>MAR</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-coffee-dark">Cata de Café Colombiano</h3>
+                            <p class="text-sm text-gray-600">18:00 - 20:00</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Descubre los sabores únicos del café colombiano en una cata guiada por expertos.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-coffee-medium font-semibold">📍 Café Central</span>
+                        <button onclick="registerEvent('cata-colombiano')" class="bg-coffee-medium text-white px-4 py-2 rounded-lg text-sm hover:bg-coffee-dark transition-colors">
+                            Inscribirse
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Evento 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-olive text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="text-sm font-bold">22<br>MAR</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-coffee-dark">Taller de Latte Art</h3>
+                            <p class="text-sm text-gray-600">10:00 - 12:00</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Aprende las técnicas básicas para crear hermosos diseños en tu café con leche.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-coffee-medium font-semibold">📍 Tostado Local</span>
+                        <button onclick="registerEvent('latte-art')" class="bg-coffee-medium text-white px-4 py-2 rounded-lg text-sm hover:bg-coffee-dark transition-colors">
+                            Inscribirse
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Evento 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-coffee-dark text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="text-sm font-bold">29<br>MAR</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-coffee-dark">Feria de Emprendedores</h3>
+                            <p class="text-sm text-gray-600">09:00 - 17:00</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Conoce emprendedores locales del mundo del café y productos artesanales.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-coffee-medium font-semibold">📍 Plaza de Armas</span>
+                        <button onclick="registerEvent('feria-emprendedores')" class="bg-coffee-medium text-white px-4 py-2 rounded-lg text-sm hover:bg-coffee-dark transition-colors">
+                            Inscribirse
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas y Comunidad -->
+    <section id="resenas" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-coffee-dark mb-4">💬 Reseñas y Comunidad</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Comparte tu experiencia y descubre qué dicen otros amantes del café sobre nuestras cafeterías.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Formulario de Reseña -->
+                <div class="bg-beige rounded-lg p-8">
+                    <h3 class="text-2xl font-semibold text-coffee-dark mb-6">✍️ Deja tu Reseña</h3>
+                    <form onsubmit="submitReview(event)">
+                        <div class="mb-4">
+                            <label class="block text-coffee-dark font-medium mb-2">Cafetería</label>
+                            <select class="w-full px-4 py-2 border border-coffee-light rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-medium">
+                                <option>Selecciona una cafetería</option>
+                                <option>Café Central</option>
+                                <option>Tostado Local</option>
+                                <option>Granos del Norte</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-coffee-dark font-medium mb-2">Calificación</label>
+                            <div class="flex gap-2">
+                                <button type="button" class="text-2xl text-gray-300 hover:text-yellow-500 transition-colors" onclick="setRating(1)">⭐</button>
+                                <button type="button" class="text-2xl text-gray-300 hover:text-yellow-500 transition-colors" onclick="setRating(2)">⭐</button>
+                                <button type="button" class="text-2xl text-gray-300 hover:text-yellow-500 transition-colors" onclick="setRating(3)">⭐</button>
+                                <button type="button" class="text-2xl text-gray-300 hover:text-yellow-500 transition-colors" onclick="setRating(4)">⭐</button>
+                                <button type="button" class="text-2xl text-gray-300 hover:text-yellow-500 transition-colors" onclick="setRating(5)">⭐</button>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-coffee-dark font-medium mb-2">Tu Experiencia</label>
+                            <textarea rows="4" placeholder="Cuéntanos sobre tu experiencia..." 
+                                    class="w-full px-4 py-2 border border-coffee-light rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-medium"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-coffee-medium text-white py-3 rounded-lg font-semibold hover:bg-coffee-dark transition-colors">
+                            Publicar Reseña
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Reseñas Recientes -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-coffee-dark mb-6">📝 Reseñas Recientes</h3>
+                    <div class="space-y-6">
+                        <div class="bg-beige rounded-lg p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-coffee-medium rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                                    M
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-coffee-dark">María González</div>
+                                    <div class="text-sm text-gray-600">Café Central • Hace 2 días</div>
+                                </div>
+                            </div>
+                            <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+                            <p class="text-gray-700">"Excelente café y ambiente muy acogedor. El barista conoce perfectamente su trabajo y el flat white estaba delicioso. Definitivamente volveré."</p>
+                        </div>
+
+                        <div class="bg-beige rounded-lg p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-olive rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                                    C
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-coffee-dark">Carlos Mendoza</div>
+                                    <div class="text-sm text-gray-600">Tostado Local • Hace 1 semana</div>
+                                </div>
+                            </div>
+                            <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+                            <p class="text-gray-700">"Me encanta el enfoque sustentable de este lugar. El cold brew es increíble y los pasteles veganos están buenísimos. Muy recomendado."</p>
+                        </div>
+
+                        <div class="bg-beige rounded-lg p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 bg-coffee-dark rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                                    A
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-coffee-dark">Ana Rodríguez</div>
+                                    <div class="text-sm text-gray-600">Granos del Norte • Hace 2 semanas</div>
+                                </div>
+                            </div>
+                            <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+                            <p class="text-gray-700">"La vista desde este lugar es espectacular y el café de altura tiene un sabor único. Perfecto para trabajar o relajarse."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="py-20 bg-beige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-coffee-dark mb-4">👥 Sobre Nosotros</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Conoce al equipo detrás de The Coffee Route y nuestra misión de conectar a la comunidad a través del café.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-coffee-dark mb-6">🎓 Nuestra Historia</h3>
+                    <p class="text-gray-700 mb-4">
+                        Somos un grupo de estudiantes de INACAP La Serena apasionados por el café y el desarrollo tecnológico. 
+                        Después de la pandemia, notamos que muchas cafeterías locales necesitaban mayor visibilidad para reconectarse con la comunidad.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Así nació The Coffee Route: una plataforma digital que no solo mapea las mejores cafeterías de especialidad 
+                        en la Región de Coquimbo, sino que también crea una comunidad de amantes del café que apoyan el comercio local.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Nuestro objetivo es simple: que cada taza de café cuente una historia y cada visita fortalezca los lazos 
+                        entre los cafeteros locales y su comunidad.
+                    </p>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h4 class="font-semibold text-coffee-dark mb-3">🎯 Nuestra Misión</h4>
+                        <p class="text-gray-700 text-sm">
+                            Promover la cultura del café de especialidad en la Región de Coquimbo, conectando a los amantes del café 
+                            con cafeterías locales excepcionales y fomentando el crecimiento del comercio independiente.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-white rounded-lg p-8 shadow-lg">
+                        <div class="text-6xl mb-4">🎓</div>
+                        <h4 class="text-xl font-semibold text-coffee-dark mb-4">Equipo INACAP La Serena</h4>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="flex items-center justify-center">
+                                <span class="w-2 h-2 bg-coffee-medium rounded-full mr-2"></span>
+                                Desarrollo Web y Mobile
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <span class="w-2 h-2 bg-coffee-medium rounded-full mr-2"></span>
+                                Diseño UX/UI
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <span class="w-2 h-2 bg-coffee-medium rounded-full mr-2"></span>
+                                Marketing Digital
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <span class="w-2 h-2 bg-coffee-medium rounded-full mr-2"></span>
+                                Gestión de Proyectos
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-coffee-light">
+                            <p class="text-xs text-gray-500">
+                                "Conectando comunidades, una taza a la vez"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-coffee-dark mb-4">📞 Contacto</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    ¿Tienes una cafetería que quieres incluir? ¿Sugerencias? ¡Nos encantaría escucharte!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Formulario de Contacto -->
+                <div class="bg-beige rounded-lg p-8">
+                    <h3 class="text-2xl font-semibold text-coffee-dark mb-6">📧 Envíanos un Mensaje</h3>
+                    <form onsubmit="submitContact(event)">
+                        <div class="mb-4">
+                            <label class="block text-coffee-dark font-medium mb-2">Nombre</label>
+                            <input type="text" required 
+                                   class="w-full px-4 py-2 border border-coffee-light rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-medium">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-coffee-dark font-medium mb-2">Email</label>
+                            <input type="email" required 
+                                   class="w-full px-4 py-2 border border-coffee-light rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-medium">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-coffee-dark font-medium mb-2">Asunto</label>
+                            <select class="w-full px-4 py-2 border border-coffee-light rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-medium">
+                                <option>Incluir mi cafetería</option>
+                                <option>Sugerencia</option>
+                                <option>Problema técnico</option>
+                                <option>Colaboración</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-coffee-dark font-medium mb-2">Mensaje</label>
+                            <textarea rows="5" required placeholder="Cuéntanos más detalles..." 
+                                    class="w-full px-4 py-2 border border-coffee-light rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-medium"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-coffee-medium text-white py-3 rounded-lg font-semibold hover:bg-coffee-dark transition-colors">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                        <p class="text-sm text-yellow-800">
+                            <strong>Nota:</strong> Este es un formulario de demostración. En la versión real, los mensajes se enviarían a nuestro equipo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Información de Contacto -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-coffee-dark mb-6">📍 Información de Contacto</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">🏫</div>
+                            <div>
+                                <h4 class="font-semibold text-coffee-dark">Ubicación</h4>
+                                <p class="text-gray-600">INACAP La Serena<br>Región de Coquimbo, Chile</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">📧</div>
+                            <div>
+                                <h4 class="font-semibold text-coffee-dark">Email</h4>
+                                <p class="text-gray-600">info@thecoffeeroute.cl</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">📱</div>
+                            <div>
+                                <h4 class="font-semibold text-coffee-dark">Redes Sociales</h4>
+                                <div class="flex gap-4 mt-2">
+                                    <a href="#" class="text-coffee-medium hover:text-coffee-dark transition-colors">📘 Facebook</a>
+                                    <a href="#" class="text-coffee-medium hover:text-coffee-dark transition-colors">📷 Instagram</a>
+                                    <a href="#" class="text-coffee-medium hover:text-coffee-dark transition-colors">🐦 Twitter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-coffee-light rounded-lg p-6">
+                        <h4 class="font-semibold text-coffee-dark mb-3">☕ ¿Tienes una Cafetería?</h4>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Si eres dueño de una cafetería de especialidad en la Región de Coquimbo, 
+                            ¡nos encantaría incluirte en nuestra ruta!
+                        </p>
+                        <button onclick="scrollToSection('contacto')" class="bg-coffee-medium text-white px-4 py-2 rounded-lg text-sm hover:bg-coffee-dark transition-colors">
+                            Únete a la Ruta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">☕ The Coffee Route</div>
+                    <p class="text-gray-300 text-sm">
+                        Conectando amantes del café con las mejores cafeterías de especialidad en la Región de Coquimbo.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#mapa" class="text-gray-300 hover:text-white transition-colors">Mapa de Cafeterías</a></li>
+                        <li><a href="#pasaporte" class="text-gray-300 hover:text-white transition-colors">Pasaporte Cafetero</a></li>
+                        <li><a href="#eventos" class="text-gray-300 hover:text-white transition-colors">Eventos</a></li>
+                        <li><a href="#resenas" class="text-gray-300 hover:text-white transition-colors">Reseñas</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Comunidad</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">📘 Facebook</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">📷 Instagram</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">🐦 Twitter</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">💼 LinkedIn</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>📧 info@thecoffeeroute.cl</li>
+                        <li>🏫 INACAP La Serena</li>
+                        <li>📍 Región de Coquimbo</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-sm text-gray-300">
+                <p>&copy; 2024 The Coffee Route. Desarrollado con ❤️ por estudiantes de INACAP La Serena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modales -->
+    <!-- Modal de Cafetería -->
+    <div id="cafe-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-90vh overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="modal-title" class="text-2xl font-bold text-coffee-dark"></h3>
+                    <button onclick="closeCafeModal()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="modal-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Pago -->
+    <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-2xl font-bold text-coffee-dark">💳 Comprar Pasaporte</h3>
+                    <button onclick="closePaymentModal()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="text-center mb-6">
+                    <div class="text-4xl mb-2">📖</div>
+                    <h4 class="text-xl font-semibold text-coffee-dark">Pasaporte Cafetero Digital</h4>
+                    <p class="text-3xl font-bold text-coffee-medium mt-2">$5.990</p>
+                </div>
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                    <p class="text-sm text-yellow-800">
+                        <strong>Nota:</strong> Esta es una demostración. En la versión real se integraría con Webpay o PayPal para procesar el pago de forma segura.
+                    </p>
+                </div>
+                <button onclick="processPayment()" class="w-full bg-coffee-medium text-white py-3 rounded-lg font-semibold hover:bg-coffee-dark transition-colors mb-3">
+                    Proceder al Pago
+                </button>
+                <button onclick="closePaymentModal()" class="w-full border border-coffee-medium text-coffee-medium py-3 rounded-lg font-semibold hover:bg-coffee-medium hover:text-white transition-colors">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variables globales
+        let currentRating = 0;
+        
+        // Navegación móvil
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll suave
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Buscador inteligente
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const suggestions = document.getElementById('search-suggestions');
+            
+            if (query.length > 2) {
+                const mockSuggestions = [
+                    'Café Central - La Serena',
+                    'Tostado Local - Coquimbo',
+                    'Granos del Norte - Ovalle',
+                    'Espresso en La Serena',
+                    'Cold Brew en Coquimbo'
+                ].filter(item => item.toLowerCase().includes(query));
+                
+                if (mockSuggestions.length > 0) {
+                    suggestions.innerHTML = mockSuggestions.map(item => 
+                        `<div class="p-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0" onclick="selectSuggestion('${item}')">${item}</div>`
+                    ).join('');
+                    suggestions.classList.remove('hidden');
+                } else {
+                    suggestions.classList.add('hidden');
+                }
+            } else {
+                suggestions.classList.add('hidden');
+            }
+        });
+
+        function selectSuggestion(suggestion) {
+            document.getElementById('search-input').value = suggestion;
+            document.getElementById('search-suggestions').classList.add('hidden');
+            // Aquí se implementaría la búsqueda real
+            alert(`Buscando: ${suggestion}`);
+        }
+
+        // Modal de cafetería
+        function openCafeModal(cafeId) {
+            const modal = document.getElementById('cafe-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const cafeData = {
+                central: {
+                    name: 'Café Central',
+                    description: 'Especialistas en café de origen único con más de 10 años de experiencia en La Serena.',
+                    address: 'Av. Francisco de Aguirre 123, La Serena',
+                    hours: 'Lun-Vie: 7:00-20:00 | Sáb-Dom: 8:00-22:00',
+                    features: ['WiFi', 'Pet Friendly', 'Terraza'],
+                    menu: ['Espresso - $1.500', 'Cappuccino - $2.200', 'Flat White - $2.500', 'Cheesecake - $2.800'],
+                    story: 'Fundado en 2013 por María y Carlos, dos amantes del café que decidieron traer la cultura del café de especialidad a La Serena. Trabajamos directamente con productores locales y tostamos nuestros granos cada semana.'
+                },
+                tostado: {
+                    name: 'Tostado Local',
+                    description: 'Tostadores artesanales con enfoque en sostenibilidad y comercio justo.',
+                    address: 'Calle Aldunate 456, Coquimbo',
+                    hours: 'Mar-Dom: 8:00-18:00 | Lunes cerrado',
+                    features: ['WiFi', 'Orgánico', 'Comercio Justo'],
+                    menu: ['Cold Brew - $2.000', 'V60 - $2.500', 'Aeropress - $2.300', 'Muffin Vegano - $1.800'],
+                    story: 'Nuestro compromiso con el medio ambiente nos llevó a crear un espacio donde cada taza cuenta. Tostamos en pequeños lotes y trabajamos solo con cafés certificados orgánicos y de comercio justo.'
+                },
+                granos: {
+                    name: 'Granos del Norte',
+                    description: 'Café de altura con vista panorámica de la cordillera en Ovalle.',
+                    address: 'Plaza de Armas 789, Ovalle',
+                    hours: 'Todos los días: 7:30-21:00',
+                    features: ['WiFi', 'Vista Panorámica', 'Música en Vivo'],
+                    menu: ['Café de Altura - $2.800', 'Macchiato - $2.400', 'Affogato - $3.200', 'Torta de Nuez - $2.600'],
+                    story: 'Ubicados en el corazón de Ovalle, ofrecemos una experiencia única combinando café de altura con vistas espectaculares de la cordillera. Nuestros granos provienen de fincas ubicadas sobre los 1.200 metros de altitud.'
+                }
+            };
+            
+            const cafe = cafeData[cafeId];
+            title.textContent = cafe.name;
+            
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <div class="h-48 bg-coffee-light rounded-lg flex items-center justify-center">
+                        <div class="text-6xl">☕</div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-coffee-dark mb-2">📖 Nuestra Historia</h4>
+                        <p class="text-gray-700">${cafe.story}</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-coffee-dark mb-2">📍 Información</h4>
+                        <p class="text-gray-700 mb-1">${cafe.address}</p>
+                        <p class="text-gray-700 mb-2">${cafe.hours}</p>
+                        <div class="flex gap-2">
+                            ${cafe.features.map(feature => `<span class="bg-coffee-light text-coffee-dark px-2 py-1 rounded-full text-xs">${feature}</span>`).join('')}
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-coffee-dark mb-2">☕ Menú Destacado</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            ${cafe.menu.map(item => `<div class="bg-beige p-2 rounded text-sm">${item}</div>`).join('')}
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-coffee-dark mb-2">🌐 Redes Sociales</h4>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-coffee-medium hover:text-coffee-dark">📘 Facebook</a>
+                            <a href="#" class="text-coffee-medium hover:text-coffee-dark">📷 Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeCafeModal() {
+            document.getElementById('cafe-modal').classList.add('hidden');
+        }
+
+        // Sistema de calificación
+        function setRating(rating) {
+            currentRating = rating;
+            const stars = document.querySelectorAll('#resenas button[onclick^="setRating"]');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.remove('text-gray-300');
+                    star.classList.add('text-yellow-500');
+                } else {
+                    star.classList.remove('text-yellow-500');
+                    star.classList.add('text-gray-300');
+                }
+            });
+        }
+
+        // Pasaporte Cafetero
+        function buyPassport() {
+            document.getElementById('payment-modal').classList.remove('hidden');
+        }
+
+        function closePaymentModal() {
+            document.getElementById('payment-modal').classList.add('hidden');
+        }
+
+        function processPayment() {
+            alert('¡Gracias por tu compra! En la versión real, serías redirigido a la pasarela de pago segura.');
+            closePaymentModal();
+        }
+
+        function downloadSample() {
+            alert('¡Descargando muestra del Pasaporte Cafetero! En la versión real, se descargaría un PDF.');
+        }
+
+        // Eventos
+        function registerEvent(eventId) {
+            const events = {
+                'cata-colombiano': 'Cata de Café Colombiano',
+                'latte-art': 'Taller de Latte Art',
+                'feria-emprendedores': 'Feria de Emprendedores'
+            };
+            alert(`¡Te has inscrito exitosamente al evento: ${events[eventId]}! Recibirás un email de confirmación.`);
+        }
+
+        // Formularios
+        function submitReview(event) {
+            event.preventDefault();
+            alert('¡Gracias por tu reseña! Ha sido enviada y será publicada después de su revisión.');
+            event.target.reset();
+            setRating(0);
+        }
+
+        function submitContact(event) {
+            event.preventDefault();
+            alert('¡Mensaje enviado exitosamente! Te responderemos pronto.');
+            event.target.reset();
+        }
+
+        // Cerrar modales al hacer clic fuera
+        document.getElementById('cafe-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCafeModal();
+            }
+        });
+
+        document.getElementById('payment-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePaymentModal();
+            }
+        });
+
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('section > div');
+            elementsToAnimate.forEach(el => observer.observe(el));
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'962541af01e9e7a8',t:'MTc1MzA0Mzg0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
